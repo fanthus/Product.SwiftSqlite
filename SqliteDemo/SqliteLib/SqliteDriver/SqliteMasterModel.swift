@@ -15,7 +15,7 @@ class SqliteMasterModel {
     var tbl_name:String?
     var type:String?
     
-    func masterModelFromDict(dict:NSDictionary) -> SqliteMasterModel {
+    class func masterModelFromDict(dict:NSDictionary) -> SqliteMasterModel {
         let sqliteMasterModel:SqliteMasterModel = SqliteMasterModel()
         sqliteMasterModel.type = dict.objectForKey("type") as! String?
         sqliteMasterModel.name = dict.objectForKey("name") as! String?

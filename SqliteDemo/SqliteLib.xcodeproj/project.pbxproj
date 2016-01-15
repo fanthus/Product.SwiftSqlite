@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5185B011C48940700F66919 /* FanStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5185B001C48940700F66919 /* FanStoreManager.swift */; };
 		F544BC5C1C47887A002252EB /* SqliteDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544BC571C47887A002252EB /* SqliteDriver.swift */; };
 		F544BC5D1C47887A002252EB /* SqliteMasterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544BC581C47887A002252EB /* SqliteMasterModel.swift */; };
 		F544BC5E1C47887A002252EB /* SqliteParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544BC591C47887A002252EB /* SqliteParam.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5185B001C48940700F66919 /* FanStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FanStoreManager.swift; sourceTree = "<group>"; };
 		F544BC571C47887A002252EB /* SqliteDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqliteDriver.swift; sourceTree = "<group>"; };
 		F544BC581C47887A002252EB /* SqliteMasterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqliteMasterModel.swift; sourceTree = "<group>"; };
 		F544BC591C47887A002252EB /* SqliteParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqliteParam.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				F5ED53EF1C3E0BCC006981F3 /* AppDelegate.swift */,
 				F5ED53F11C3E0BCC006981F3 /* ViewController.swift */,
 				F5EEFCDB1C44B051008C61DC /* Fan.swift */,
+				F5185B001C48940700F66919 /* FanStoreManager.swift */,
 				F544BC561C47887A002252EB /* SqliteDriver */,
 				F5ED53F31C3E0BCC006981F3 /* Main.storyboard */,
 				F5ED53F61C3E0BCC006981F3 /* Assets.xcassets */,
@@ -295,6 +298,7 @@
 				F544BC5E1C47887A002252EB /* SqliteParam.swift in Sources */,
 				F544BC5C1C47887A002252EB /* SqliteDriver.swift in Sources */,
 				F544BC601C47887A002252EB /* SqliteResult.swift in Sources */,
+				F5185B011C48940700F66919 /* FanStoreManager.swift in Sources */,
 				F544BC5D1C47887A002252EB /* SqliteMasterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

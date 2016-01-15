@@ -13,26 +13,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fileManager = NSFileManager.defaultManager()
-        let paths:Array = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true);
-        let documentPath:String = paths[0]
-        let filePath:String = documentPath + "/fan.db"
         //
         let fan:Fan = Fan()
         fan.id = 1000;
         fan.name = "fanxiushan"
         
-        //create table
-        let sqliteDriver = SqliteDriver.driverOfFilePath(filePath).0;
-        let param:SqliteParam = SqlitePrepare.createSqlWithTableName("fan", fieldArray: Fan.createTableFieldArray())
-        let excuteResult = sqliteDriver.excuteParam(param)
+        let sqliteDriver = Fan.driverOfTableFan()
         
         //insert record.
         let insertParam:SqliteParam = SqlitePrepare.insertSqlWithTableName("fan", dict: fan.dictOfTableRow())
         print(insertParam.sql)
         let insertResult = sqliteDriver.excuteParam(insertParam)
         print(insertResult)
-        
         //
         let selectParam:SqliteParam = SqlitePrepare.selectSqlWithTableName("fan", fieldArray: nil, condition: "")
         print(selectParam.sql)

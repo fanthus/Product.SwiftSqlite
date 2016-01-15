@@ -12,6 +12,17 @@ class Fan {
     var id:Int?;
     var name:String?;
     
+    class func driverOfTableFan() -> SqliteDriver {
+        let paths:Array = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true);
+        let documentPath:String = paths[0]
+        let filePath:String = documentPath + "/fan.db"
+        let driver = SqliteDriver.driverOfFilePath(filePath, tableName: "fan")
+        if driver.tableExist("fan") == false {
+            let param:SqliteParam = SqlitePrepare.createSqlWithTableName("fan", fieldArray: self.createTableFieldArray())
+            driver.excuteParam(param)
+        }
+        return driver
+    }
     
     class func createTableFieldArray() -> Array<String> {
         let filedArray:Array<String> = ["id integer","name text"]
