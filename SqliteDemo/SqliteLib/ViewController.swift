@@ -29,15 +29,25 @@ class ViewController: UIViewController {
         let selectParam:SqliteParam = SqlitePrepare.selectSqlWithTableName("fan", fieldArray: nil, condition: "")
         print(selectParam.sql)
         let selectResult:SqliteResult = sqliteDriver.selectParam(selectParam)
-        
         print(selectResult)
-        
         let dataArray:Array<AnyObject> = selectResult.sqliteResultData
+        print("dataArray \(dataArray)")
         
-        for var i:Int = 0;i < dataArray.count;i++ {
-            var fan = Fan.dataOfDict(dataArray[i] as! Dictionary<String, String>)
-        }
+        fan.name = "hello world"
+        let updateParam:SqliteParam = SqlitePrepare.updateSqlWithTableName("fan", dict: fan.dictOfTableRow(), condition: "id = 1000")
+        let updateResult = sqliteDriver.excuteParam(updateParam)
+        print("updateResult \(updateResult.sqliteResultCode)")
         
+        let selectResult1:SqliteResult = sqliteDriver.selectParam(selectParam)
+        let afterUpdateDataArray:Array<AnyObject> = selectResult1.sqliteResultData
+        print("after update dataArray \(afterUpdateDataArray)")
+        
+        
+        let deleteParam = SqlitePrepare.deleteSqlWithTableName("fan", condition: "id = 1000")
+        sqliteDriver.excuteParam(deleteParam)
+        let selectResult2:SqliteResult = sqliteDriver.selectParam(selectParam)
+        let afterDeleteDataArray:Array<AnyObject> = selectResult2.sqliteResultData
+        print("after delete dataArray \(afterDeleteDataArray)")
     }
 
     override func didReceiveMemoryWarning() {

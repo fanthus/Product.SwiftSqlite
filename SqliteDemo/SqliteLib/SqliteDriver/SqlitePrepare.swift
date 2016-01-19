@@ -61,9 +61,6 @@ class SqlitePrepare  {
         return param
     }
     
-    
-    
-    
     class func updateSqlWithTableName(tableName:String,dict:Dictionary<String,AnyObject>,condition:String) -> SqliteParam {
         var setString:String = String()
         var bindArray:Array<AnyObject> = Array()
@@ -80,5 +77,11 @@ class SqlitePrepare  {
         param.sql = updateSql
         param.bindArray = bindArray
         return param
-    } 
+    }
+    
+    class func deleteSqlWithTableName(tableName:String,condition:String) -> SqliteParam {
+        let param:SqliteParam = SqliteParam()
+        param.sql = "delete from \(tableName) where \(condition)"
+        return param
+    }
 }

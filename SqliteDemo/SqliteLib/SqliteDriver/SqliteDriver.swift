@@ -79,10 +79,11 @@ class SqliteDriver  {
                     let name:COpaquePointer = COpaquePointer.init(columnName)
                     let value:COpaquePointer = COpaquePointer.init(columnValue)
                     rawDict[String.init(UTF8String: UnsafePointer.init(name))!] = String.init(UTF8String: UnsafePointer.init(value))
-                    sqliteResult.sqliteResultData.append(rawDict)
                 }
             }
+            sqliteResult.sqliteResultData.append(rawDict)
         }
+        sqlite3_reset(compiledStatement)
         return sqliteResult
     }
     
@@ -102,4 +103,5 @@ class SqliteDriver  {
         }
         return found;
      }
+    
 }
