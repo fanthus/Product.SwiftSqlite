@@ -8,6 +8,8 @@
 
 import Foundation
 
+//Make sqlite param to pass to driver.
+
 class SqlitePrepare  {
     class func createSqlWithTableName(tableName:String,fieldArray:Array<String>) -> SqliteParam {
         var fieldString:String = String()

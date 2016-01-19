@@ -37,7 +37,7 @@ class Fan {
     }
     
     class func dataOfDict(dataDict:Dictionary<String,String>) -> Fan {
-        var fan:Fan = Fan()
+        let fan:Fan = Fan()
         fan.id = Int.init(dataDict["id"]!)
         fan.name = dataDict["name"];
         return fan;

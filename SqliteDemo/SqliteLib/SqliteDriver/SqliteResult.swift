@@ -8,6 +8,8 @@
 
 import Foundation
 
+//Sql excuted result.
+
 class SqliteResult {
     var sqliteResultCode:Int32?
     var sqliteResultMsg:String?

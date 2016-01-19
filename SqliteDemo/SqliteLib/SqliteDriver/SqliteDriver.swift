@@ -8,6 +8,8 @@
 
 import Foundation
 
+//use this driver to operate sqlite.
+
 class SqliteDriver  {
     var dbHandler:COpaquePointer = nil;
     let sqliteMasterName:String = "sqlite_master"
